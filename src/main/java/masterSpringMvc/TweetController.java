@@ -19,9 +19,13 @@ public class TweetController {
     @Autowired
     private Twitter twitter;
 
+    @RequestMapping("/")
+    public String home() {
+    	return "searchPage";
+    }
     
     // ability to search by passing a parameter eg  http://localhost:8080/?search=springMVC
-    @RequestMapping("/")
+    @RequestMapping("/result")
     public String hello(@RequestParam(defaultValue = "trump") String search, Model model) {
         SearchResults searchResults = twitter.searchOperations().search(search);
         List<Tweet> tweets = searchResults.getTweets();
