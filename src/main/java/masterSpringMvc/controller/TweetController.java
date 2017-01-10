@@ -1,8 +1,6 @@
-package masterSpringMvc;
+package masterSpringMvc.controller;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,4 +49,6 @@ public class TweetController {
         redirectAttributes.addAttribute("search", search);
         return "redirect:result";
     }
+    
+
 }
